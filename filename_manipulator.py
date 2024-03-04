@@ -21,7 +21,7 @@ def batchRename(directory, appendText):
     for filename in os.listdir(directory):                                                              #iterate over each file in the specified directory
         if os.path.isfile(os.path.join(directory, filename)):                                           #checks to see if the current item in the directory is a file
             base_name, extension = os.path.splitext(filename)                                           #splits the file name into its base and extension
-            newFilename = f"{base_name}-{appendText}{extension}"                                        #constructs the new file name by appending the user specified text to the end
+            newFilename = f"{base_name}{appendText}{extension}"                                        #constructs the new file name by appending the user specified text to the end
             os.rename(os.path.join(directory, filename), os.path.join(directory, newFilename))          #renames the current file
             print(f"Appended '{appendText}' to {filename}.")                                            #prints a success message
     print("File renaming completed.")                                                                   #outputs a success message
